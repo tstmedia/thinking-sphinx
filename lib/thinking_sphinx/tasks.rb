@@ -138,5 +138,5 @@ def sphinx_pid
 end
 
 def sphinx_running?
-  ThinkingSphinx.sphinx_running?
+  ThinkingSphinx.sphinx_running? and !ThinkingSphinx.remote_sphinx?
 end
