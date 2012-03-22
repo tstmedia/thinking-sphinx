@@ -41,7 +41,8 @@ module ThinkingSphinx
       when "ActiveRecord::ConnectionAdapters::MysqlAdapter",
            "ActiveRecord::ConnectionAdapters::MysqlplusAdapter",
            "ActiveRecord::ConnectionAdapters::Mysql2Adapter",
-           "ActiveRecord::ConnectionAdapters::NullDBAdapter"
+           "ActiveRecord::ConnectionAdapters::NullDBAdapter",
+           "MultiDb::ConnectionProxy"
         :mysql
       when "ActiveRecord::ConnectionAdapters::PostgreSQLAdapter"
         :postgresql
