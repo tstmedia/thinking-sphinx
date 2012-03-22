@@ -29,7 +29,7 @@ namespace :thinking_sphinx do
     config = ThinkingSphinx::Configuration.instance
 
     FileUtils.mkdir_p config.searchd_file_path
-    raise RuntimeError, "searchd is already running." if sphinx_running?
+    raise RuntimeError, "searchd is already running." if sphinx_running? and !ThinkingSphinx.remote_sphinx?
 
     Dir["#{config.searchd_file_path}/*.spl"].each { |file| File.delete(file) }
 
@@ -138,5 +138,5 @@ def sphinx_pid
 end
 
 def sphinx_running?
-  ThinkingSphinx.sphinx_running? and !ThinkingSphinx.remote_sphinx?
+  ThinkingSphinx.sphinx_running?
 end
